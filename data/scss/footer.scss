@@ -1,0 +1,31 @@
+footer {
+	width: 80%;
+	cursor: default;
+	.copyright {
+		margin: 2% 0;
+		opacity: .5;
+		color: $font-clr;
+		text-align: center;
+		font-family: 'Cormorant Garamond';
+		font-size: 1em;
+	}
+	hr { opacity: .5; }
+	& > ul {
+		display: flex;
+		flex-direction: rows;
+		justify-content: space-between;
+		
+		list-style: none;
+		gap: 5%;
+		margin: 5% 0;
+		a {
+			color: $font-clr;
+			text-decoration: none;
+			transition: .25s;
+			&:hover {
+				color: $font-select;
+				text-decoration: underline;
+			}
+		}
+	}
+}

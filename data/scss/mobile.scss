@@ -1,0 +1,35 @@
+@media only screen and (max-width: 600px) {
+	header {
+		position: relative;
+		width: 100%;
+		& > ul {
+			flex-direction: column;
+			li.smart-hidden { display: none; }
+		}
+	}
+	ul.grid {
+		display: flex !important;
+		flex-direction: column;
+		gap: 30px !important;
+		li {
+			.image {
+				width: inherit;
+				border: 1px solid $font-select;
+				text-align: center;
+				img {
+					width: 90% !important;
+					padding: 5% 0;
+					transform: translate(0, 0) !important;
+				}
+			}
+			h1 {
+				font-size: 2em !important;
+			}
+			h2 {
+				font-size: 1.5em !important;
+			}
+		}
+	}
+
+	
+}

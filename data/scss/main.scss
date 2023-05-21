@@ -1,0 +1,238 @@
+@font-face {
+	font-family: 'Garamond';
+	src: url('../ttf/Garamond.ttf');
+}
+@font-face {
+	font-family: 'Cormorant Garamond';
+	src: url('../ttf/Cormorant Garamond.ttf');
+}
+
+
+// constants:
+$font-clr: #fff;
+$font-select: #CDAA7D;
+$back-clr: #111;
+
+@import './header.scss';
+@import './footer.scss';
+@import './prices.scss';
+@import './mobile.scss';
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+#app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: $back-clr;
+
+
+}
+
+#content {
+	width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+	padding-bottom: 5%;
+}
+
+.ul-list {
+	font-family: 'Cormorant Garamond';
+	display: flex;
+	flex-direction: column;
+	list-style: false;
+	font-size: 1em;
+	color: $font-clr;
+	list-style: none;
+	gap: 15px;
+}
+.ul-list-title {
+	color: $font-clr;
+	font-family: 'Garamond';
+	font-size: 1.5em;
+	margin-bottom: 5%;
+}
+
+.button {
+	cursor: pointer;
+	&.close {
+		width: 8%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		margin: 5% 10%;
+	}
+	img {
+		width: 100%;
+	}
+}
+
+// templates:
+
+.block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	z-index: -1;
+	&.content {
+		gap: 60px;
+		padding: 5% 0;
+	}
+	&.page { padding: 10% 0; }
+	&.parallax {
+		min-height: 100vh;
+		width: 100%;
+		justify-content: center;
+		overflow-x: hidden;
+		background: url('../images/header.png') top center;
+		background-size: cover;
+		
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			box-shadow: inset 0 0 50px $back-clr;
+		}
+		h1 {
+			text-align: center;
+			width: 50%;
+			color: $font-clr;
+			font-size: 4em;
+			font-family: 'Garamond';
+		}
+	}
+	p {
+		color: $font-clr;
+		font-family: 'Cormorant Garamond';
+		font-size: 1.25em;
+		text-align: center;
+		
+	}
+	h1 {
+		color: $font-clr;
+		font-family: 'Garamond';
+		font-size: 2em;
+	}
+	&>div {
+		width: 50%;
+	}
+	ul.grid {
+		list-style: none;
+		width: 100%;
+		display: grid;
+		gap: 5%;
+		grid-template-columns: repeat(3, 1fr);
+		& { width: 80%; }
+		li {
+			cursor: default;
+			width: 100%;
+			.image {
+				width: inherit;
+				border: 1px solid $font-select;
+				transition: .25s;
+				img {
+					transform: translate(-5%, 5%);
+					transition: .25s;
+				}
+			}
+			img { width: 100%; }
+			h1 {
+				color: $font-clr;
+				font-family: 'Garamond';
+				font-size: 1em;
+				margin-top: 5%;
+				transition: .25s;
+				text-decoration: none;
+			}
+			h2 {
+				color: $font-clr;
+				font-family: 'Cormorant Garamond';
+				font-size: .8em;
+				transition: .25s;
+				margin-top: 2%;
+				text-decoration: none;
+			}
+			&:hover {
+				.image {
+					img { transform: translate(0, 0); }
+					border: 1px solid transparent;
+				}
+				h1 { color: $font-select; }
+				h2 { opacity: .5; }
+			}
+		}
+	}
+	ul.list {
+		list-style: none;
+		display: flex;
+		width: 100%;
+		flex-direction: rows;
+		justify-content: space-between;
+		align-items: center;
+		gap: 5%;
+		& { width: 80%; }
+		li > img { opacity: .5; }
+		&.menu {
+			justify-content: space-around;
+			color: $font-clr;
+		}
+	}
+}
+
+.menu-item {
+	font-size: 1.25em;
+	font-family: 'Cormorant Garamond';
+	color: $font-clr;
+	&.active {
+		color: $font-select;
+		text-decoration: underline;
+	}
+	cursor: pointer;
+}
+
+.map {
+	//margin-top: 5%;
+	width: 80%;
+	display: block;
+	img {
+		width: 100%;
+	}
+}
+
+span.scroll {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5%;
+	width: 50%;
+	bottom: 0;
+	margin-bottom: 5%;
+}
+
+
+#scrollCircle {
+	animation: 1s infinite scrollAnim;
+}
+@keyframes scrollAnim {
+	0% {
+		transform: translate(10px, 20px);
+	}
+	60% {
+		transform: translate(10px, 10px);
+	}
+	100% {
+		transform: translate(10px, 20px);
+	}
+}

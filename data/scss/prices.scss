@@ -1,0 +1,50 @@
+div.prices {
+	width: 80% !important;
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 10%;
+	&:nth-child(2) {
+		flex-direction: row;
+	}
+	ul.list {
+		width: 100%;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		> li {
+			display: flex;
+			flex-direction: column;
+			gap: 10%;
+			width: 100%;
+			div.content {
+				width: inherit;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				h1, h2 {
+					color: $font-clr;
+					font-size: 1.5em;
+					font-family: 'Cormorant Garamond';
+				}
+			}
+			hr {
+				color: $font-clr;
+			}
+			ul.props {
+				margin: 10% 0;
+				list-style-type: '+';
+				color: $font-clr;
+				font-size: 1em;
+				font-family: 'Cormorant Garamond';
+				list-style-position: inside;
+				span {
+					margin-left: 5%;
+				}
+			}
+		}
+	}
+	img {
+		width: 50%;
+	}
+}
