@@ -8,3 +8,6 @@
 ## Backend:
 * Nodejs, Express
 * Sqlite3 (Легко заменяется на любую другую DB)
+
+
+Скриншоты проекта: [https://github.com/wmgcat/beautySalon/tree/dev/media](папка)
